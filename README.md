@@ -2,6 +2,8 @@
 
 Local MVP that turns messy Slack operations requests into structured Notion tasks.
 
+Demo video: https://youtu.be/dSuHFV1Mn7E
+
 Workflow:
 
 ```text
