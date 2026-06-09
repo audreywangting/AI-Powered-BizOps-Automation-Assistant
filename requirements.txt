@@ -1,0 +1,9 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+openai>=1.93.0
+pydantic==2.10.4
+pydantic-settings==2.7.0
+slack-sdk==3.34.0
+notion-client==2.3.0
+python-dotenv==1.0.1
+certifi>=2026.5.20
