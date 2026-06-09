@@ -10,8 +10,6 @@ Workflow:
 Slack user -> @BizOpsBot -> FastAPI -> OpenAI Structured Outputs -> Pydantic validation -> Notion page -> Slack thread reply
 ```
 
-This project intentionally does not include Celery, Redis, PostgreSQL, Docker, AWS, auth, benchmarking, telemetry, tests, or a frontend.
-
 ## Project Structure
 
 ```text
