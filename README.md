@@ -10,17 +10,6 @@ Workflow:
 Slack user -> @BizOpsBot -> FastAPI -> OpenAI Structured Outputs -> Pydantic validation -> Notion page -> Slack thread reply
 ```
 
-## Architecture
-
-```text
-Slack
-→ FastAPI
-→ OpenAI Structured Outputs
-→ Pydantic Validation
-→ Notion API
-→ Slack Confirmation
-```
-
 ## Project Structure
 
 ```text
