@@ -1,0 +1,13 @@
+{
+  "num_requests": 20,
+  "attempted_requests": 20,
+  "success_rate": 1.0,
+  "avg_latency_ms": 2309,
+  "priority_accuracy": 0.7,
+  "category_accuracy": 0.95,
+  "assignee_accuracy": 1.0,
+  "extraction_mode": "openai",
+  "stopped_early": false,
+  "stop_reason": null,
+  "generated_at": "2026-06-13T09:44:10.674779+00:00"
+}

@@ -1,3 +1,6 @@
+from time import perf_counter
+from uuid import uuid4
+
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
 from slack_sdk.signature import SignatureVerifier
 
@@ -8,6 +11,7 @@ from app.services.extraction_service import ExtractionService
 from app.services.notion_service import NotionService
 from app.services.workflow_service import WorkflowService, parse_demo_message
 from app.utils.logger import setup_logger
+from app.utils.telemetry import append_workflow_log, utc_now_iso
 
 router = APIRouter()
 logger = setup_logger(__name__)
@@ -20,23 +24,45 @@ def demo_parse(payload: DemoParseRequest) -> BizOpsTask:
 
 @router.post("/demo/create-task", response_model=DemoCreateTaskResponse)
 def demo_create_task(payload: DemoParseRequest) -> DemoCreateTaskResponse:
-    try:
-        task = ExtractionService().extract_task(payload.message)
-    except Exception as exc:
-        logger.exception("Demo task extraction failed.")
-        raise HTTPException(
-            status_code=500, detail="Failed to extract task information."
-        ) from exc
+    request_id = str(uuid4())
+    timestamp = utc_now_iso()
+    started_at = perf_counter()
+    success = False
+    notion_created = False
+    task = None
 
     try:
-        notion_url = NotionService().create_task(task, source_message=payload.message)
-    except Exception as exc:
-        logger.exception("Demo Notion task creation failed.")
-        raise HTTPException(
-            status_code=500, detail="Failed to create Notion task."
-        ) from exc
+        try:
+            task = ExtractionService().extract_task(payload.message)
+        except Exception as exc:
+            logger.exception("Demo task extraction failed.")
+            raise HTTPException(
+                status_code=500, detail="Failed to extract task information."
+            ) from exc
 
-    return DemoCreateTaskResponse(task=task, notion_url=notion_url)
+        try:
+            notion_url = NotionService().create_task(
+                task, source_message=payload.message
+            )
+            notion_created = True
+        except Exception as exc:
+            logger.exception("Demo Notion task creation failed.")
+            raise HTTPException(
+                status_code=500, detail="Failed to create Notion task."
+            ) from exc
+
+        success = True
+        return DemoCreateTaskResponse(task=task, notion_url=notion_url)
+    finally:
+        latency_ms = int((perf_counter() - started_at) * 1000)
+        append_workflow_log(
+            request_id=request_id,
+            timestamp=timestamp,
+            success=success,
+            latency_ms=latency_ms,
+            task=task,
+            notion_created=notion_created,
+        )
 
 
 @router.post("/slack/events")

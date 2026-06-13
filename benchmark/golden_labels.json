@@ -1,0 +1,122 @@
+[
+  {
+    "id": "req_001",
+    "expected_priority": "Urgent",
+    "expected_category": "Frontend Bug",
+    "expected_assignee": "Alex"
+  },
+  {
+    "id": "req_002",
+    "expected_priority": "Urgent",
+    "expected_category": "Backend Bug",
+    "expected_assignee": "Sam"
+  },
+  {
+    "id": "req_003",
+    "expected_priority": "High",
+    "expected_category": "Billing",
+    "expected_assignee": "Priya"
+  },
+  {
+    "id": "req_004",
+    "expected_priority": "High",
+    "expected_category": "Access Issue",
+    "expected_assignee": "Jordan"
+  },
+  {
+    "id": "req_005",
+    "expected_priority": "High",
+    "expected_category": "Customer Complaint",
+    "expected_assignee": "Morgan"
+  },
+  {
+    "id": "req_006",
+    "expected_priority": "Medium",
+    "expected_category": "Data Request",
+    "expected_assignee": "Casey"
+  },
+  {
+    "id": "req_007",
+    "expected_priority": "High",
+    "expected_category": "Integration Issue",
+    "expected_assignee": "Taylor"
+  },
+  {
+    "id": "req_008",
+    "expected_priority": "High",
+    "expected_category": "Device Issue",
+    "expected_assignee": "Riley"
+  },
+  {
+    "id": "req_009",
+    "expected_priority": "Low",
+    "expected_category": "Frontend Bug",
+    "expected_assignee": "Alex"
+  },
+  {
+    "id": "req_010",
+    "expected_priority": "High",
+    "expected_category": "Backend Bug",
+    "expected_assignee": "Sam"
+  },
+  {
+    "id": "req_011",
+    "expected_priority": "Medium",
+    "expected_category": "Billing",
+    "expected_assignee": null
+  },
+  {
+    "id": "req_012",
+    "expected_priority": "Urgent",
+    "expected_category": "Access Issue",
+    "expected_assignee": "Jordan"
+  },
+  {
+    "id": "req_013",
+    "expected_priority": "High",
+    "expected_category": "Customer Complaint",
+    "expected_assignee": "Morgan"
+  },
+  {
+    "id": "req_014",
+    "expected_priority": "Medium",
+    "expected_category": "Data Request",
+    "expected_assignee": "Casey"
+  },
+  {
+    "id": "req_015",
+    "expected_priority": "High",
+    "expected_category": "Integration Issue",
+    "expected_assignee": "Taylor"
+  },
+  {
+    "id": "req_016",
+    "expected_priority": "Urgent",
+    "expected_category": "Device Issue",
+    "expected_assignee": "Riley"
+  },
+  {
+    "id": "req_017",
+    "expected_priority": "Medium",
+    "expected_category": "Frontend Bug",
+    "expected_assignee": "Alex"
+  },
+  {
+    "id": "req_018",
+    "expected_priority": "High",
+    "expected_category": "Backend Bug",
+    "expected_assignee": "Sam"
+  },
+  {
+    "id": "req_019",
+    "expected_priority": "Medium",
+    "expected_category": "Billing",
+    "expected_assignee": "Priya"
+  },
+  {
+    "id": "req_020",
+    "expected_priority": "Urgent",
+    "expected_category": "Access Issue",
+    "expected_assignee": "Jordan"
+  }
+]

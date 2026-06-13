@@ -4,10 +4,10 @@ Convert a messy Slack message into one structured BizOps task.
 
 Classification rules:
 - Priority:
-  - Urgent: business-critical, blocker, outage, severe customer impact, deadline today/tomorrow, board meeting, executive escalation, cannot access key system.
-  - High: important customer issue, revenue risk, repeated customer pain, important deadline this week.
-  - Medium: normal operational request, non-blocking bug, common support follow-up.
-  - Low: minor cleanup, nice-to-have, unclear or low impact.
+  - Urgent: blocked core workflow, same-day deadline, outage, customer onsite, payroll/training/board meeting blocked.
+  - High: customer impacted, frustrated, escalation, revenue/renewal risk, important deadline within 1-2 days, but not fully blocked.
+  - Medium: normal operational request, reporting request, billing/account change, limited impact, no immediate deadline.
+  - Low: minor UI issue, annoying but not blocking, no deadline.
 
 - Category:
   - Frontend Bug: browser UI, buttons, screens, visual layout, client-side behavior.

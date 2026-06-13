@@ -10,6 +10,17 @@ Workflow:
 Slack user -> @BizOpsBot -> FastAPI -> OpenAI Structured Outputs -> Pydantic validation -> Notion page -> Slack thread reply
 ```
 
+## Architecture
+
+```text
+Slack
+→ FastAPI
+→ OpenAI Structured Outputs
+→ Pydantic Validation
+→ Notion API
+→ Slack Confirmation
+```
+
 ## Project Structure
 
 ```text
@@ -36,6 +47,13 @@ app/
   utils/
     logger.py
 demo.py
+benchmark/
+  mock_requests.json
+  golden_labels.json
+  evaluate.py
+  results.json
+telemetry/
+  workflow_logs.jsonl
 requirements.txt
 .env.example
 README.md
@@ -338,6 +356,75 @@ For a 20-30 second demo recording:
 4. Show the immediate parsing reply.
 5. Show the Notion task created.
 6. Show the final Slack success reply with the Notion URL.
+
+## Telemetry
+
+Every Slack workflow request appends one JSONL event to:
+
+```text
+telemetry/workflow_logs.jsonl
+```
+
+Each event records:
+
+```json
+{
+  "request_id": "...",
+  "timestamp": "...",
+  "success": true,
+  "latency_ms": 3200,
+  "priority": "Urgent",
+  "category": "Frontend Bug",
+  "assignee_extracted": true,
+  "notion_created": true
+}
+```
+
+This gives local evidence for automation success, latency, extracted routing fields, and Notion creation.
+
+## Benchmark Results
+
+The benchmark evaluates 20 realistic SaaS BizOps scenarios using OpenAI extraction against golden labels.
+
+| Metric | Result |
+| --- | --- |
+| Benchmark scenarios | 20 |
+| Workflow success rate | 100% |
+| Average latency | 2.3 seconds |
+| Category accuracy | 95% |
+| Assignee accuracy | 100% |
+| Priority accuracy | 70% |
+| Extraction mode | OpenAI |
+
+Raw benchmark output:
+
+```json
+{
+  "num_requests": 20,
+  "attempted_requests": 20,
+  "success_rate": 1.0,
+  "avg_latency_ms": 2309,
+  "priority_accuracy": 0.7,
+  "category_accuracy": 0.95,
+  "assignee_accuracy": 1.0,
+  "extraction_mode": "openai"
+}
+```
+
+## Evaluation Methodology
+
+The evaluation uses 20 realistic SaaS BizOps requests across support, customer success, sales, billing, data, access, integration, frontend, backend, and device scenarios. Each OpenAI extraction is compared against golden labels for priority, category, and assignee. Metrics include workflow success rate, average latency, category accuracy, assignee accuracy, and priority accuracy.
+
+## Key Findings
+
+- Category extraction achieved high reliability at 95%.
+- Assignee extraction achieved perfect benchmark accuracy at 100%.
+- Most extraction errors occurred in priority classification.
+- Priority classification remains partially subjective and depends on operational definitions of urgency.
+
+## Business Impact
+
+The workflow automates request intake, task creation, routing, and status notification. It reduces repetitive manual task-entry work by replacing a multi-step process of reading Slack requests, classifying urgency, creating Notion tasks, filling fields, and notifying owners with an automated pipeline.
 
 ## Error Handling
 

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "req_001",
+    "raw_message": "Hey @BizOpsBot, Acme Corp says the Save Changes button on the billing settings page does nothing in Chrome. Their ops lead needs this fixed before renewal calls this afternoon. Please assign to Alex."
+  },
+  {
+    "id": "req_002",
+    "raw_message": "@BizOpsBot Northstar Health is seeing 500 errors when their admins submit new patient imports through the API. This is blocking onboarding today. Can Sam take a look?"
+  },
+  {
+    "id": "req_003",
+    "raw_message": "Can @BizOpsBot create a ticket for Brightline Labs? They were charged twice for the May invoice and their finance team is upset. Please route to Priya."
+  },
+  {
+    "id": "req_004",
+    "raw_message": "@BizOpsBot Mosaic Foods says three new managers cannot access the analytics dashboard even though they were invited yesterday. Assign to Jordan if possible."
+  },
+  {
+    "id": "req_005",
+    "raw_message": "Hey @BizOpsBot, Atlas Robotics complained that support has not responded to their enterprise rollout questions for two days. This is becoming an escalation. Can Morgan own it?"
+  },
+  {
+    "id": "req_006",
+    "raw_message": "@BizOpsBot please create a data request for Finch Bank. They need a CSV export of all failed ACH transactions from last quarter for audit review. Assign to Casey."
+  },
+  {
+    "id": "req_007",
+    "raw_message": "Heads up @BizOpsBot, the Salesforce sync for Orbit Solar stopped updating opportunity stages yesterday. Sales leadership needs it working before pipeline review. Please assign to Taylor."
+  },
+  {
+    "id": "req_008",
+    "raw_message": "@BizOpsBot Luna Retail says the warehouse iPad scanner keeps freezing after login, so the shipping team is entering orders manually. Can Riley investigate?"
+  },
+  {
+    "id": "req_009",
+    "raw_message": "Hey @BizOpsBot, Redwood Travel reports that the date picker overlaps the Submit button on Safari mobile. It is annoying but not blocking. Please assign to Alex."
+  },
+  {
+    "id": "req_010",
+    "raw_message": "@BizOpsBot Cypress Medical is getting timeout errors from the reporting service when opening weekly utilization reports. Their QBR is tomorrow, so this is high priority. Assign to Sam."
+  },
+  {
+    "id": "req_011",
+    "raw_message": "Can @BizOpsBot help Greenhouse Cafe? They need their billing contact changed before the next invoice goes out. No specific owner yet."
+  },
+  {
+    "id": "req_012",
+    "raw_message": "@BizOpsBot Vector AI says their SSO login works for admins but contractors get permission denied. This is blocking a customer training session today. Please route to Jordan."
+  },
+  {
+    "id": "req_013",
+    "raw_message": "Hey @BizOpsBot, BluePeak Ventures is frustrated because the same onboarding checklist bug has been reported three times with no clear update. Can Morgan follow up?"
+  },
+  {
+    "id": "req_014",
+    "raw_message": "@BizOpsBot please pull a list of all active enterprise customers with renewal dates in the next 60 days for the CS planning meeting. Assign to Casey."
+  },
+  {
+    "id": "req_015",
+    "raw_message": "Hey @BizOpsBot, HubSpot activity sync is creating duplicate notes for Nimbus Cloud accounts. Sales is worried reps will contact customers twice. Assign to Taylor."
+  },
+  {
+    "id": "req_016",
+    "raw_message": "@BizOpsBot the demo room Mac mini cannot connect to the conference display before the customer onsite at 3pm. Can Riley handle this urgently?"
+  },
+  {
+    "id": "req_017",
+    "raw_message": "Hey @BizOpsBot, DeltaWare says the dashboard filter dropdown is cut off in Firefox when users select more than five regions. Please assign to Alex."
+  },
+  {
+    "id": "req_018",
+    "raw_message": "@BizOpsBot TerraOps is seeing background job failures after uploading large inventory files. The UI says processing but nothing completes. Can Sam investigate?"
+  },
+  {
+    "id": "req_019",
+    "raw_message": "Please have @BizOpsBot create a ticket for Poppy Health. Their invoice shows the wrong seat count after yesterday's downgrade. Assign to Priya."
+  },
+  {
+    "id": "req_020",
+    "raw_message": "@BizOpsBot Stellar Academy needs access restored for their program director before tomorrow morning's training. She was removed from the workspace by mistake. Jordan should own it."
+  }
+]
